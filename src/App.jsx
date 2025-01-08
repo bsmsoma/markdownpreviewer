@@ -4,7 +4,29 @@ import './App.css';
 
 
 function App() {
-  const [input, setInput] = useState(`# lets try this input`);
+
+    marked.setOptions({
+        breaks: true, // Interpreta quebras de linha como <br>
+      });
+
+    const [input, setInput] = useState(
+      `# This is a H1
+  ## This is a H2
+  [This is a link](https://www.example.com)
+  \`This is inline code\`
+
+  \`\`\`
+  This is a code block
+  \`\`\`
+
+  - This is a list item
+
+  > This is a blockquote
+
+  ![This is an image](https://via.placeholder.com/150)
+
+  **This is bolded text**`
+    );
 
   const handleChange = (event) => {
     setInput(event.target.value);
